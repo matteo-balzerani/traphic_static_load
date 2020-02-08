@@ -3,7 +3,7 @@ const readCsv = require("gtfs-utils/read-csv");
 import Route from "./../model/route";
 
 export let loadRoutesFromFile = () => {
-  var a = readCsv("../files/rome_static_gtfs/routes.txt")
+  var a = readCsv("/usr/src/app/rome_static/routes.txt")
     .on("error", console.error)
     .on("readable", function() {
       let data;

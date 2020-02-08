@@ -3,7 +3,7 @@ const readCsv = require("gtfs-utils/read-csv");
 import Stop from "./../model/stop";
 
 export let loadStopsFromFile = () => {
-  var a = readCsv("../files/rome_static_gtfs/stops.txt")
+  var a = readCsv("/usr/src/app/rome_static/stops.txt")
     .on("error", console.error)
     .on("readable", function() {
       let data;

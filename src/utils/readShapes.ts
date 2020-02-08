@@ -3,7 +3,7 @@ const readCsv = require("gtfs-utils/read-csv");
 import Shape from "./../model/shape";
 
 export let loadShapesFromFile = () => {
-  var a = readCsv("../files/rome_static_gtfs/shapes.txt")
+  var a = readCsv("/usr/src/app/rome_static/shapes.txt")
     .on("error", console.error)
     .on("readable", function() {
       let data;

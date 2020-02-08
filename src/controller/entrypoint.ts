@@ -10,6 +10,7 @@ import * as loadStopTimes from "./../utils/readStopTimes";
 import * as loadTrips from "./../utils/rearTrips";
 
 export let loadData = (req: Request, res: Response) => {
+  //load in mongodb
   loadAgency.loadAgencyFromFile();
   loadCalendar.loadCalendarFromFile();
   loadCalendarDate.loadCalendarFromFile();
@@ -18,5 +19,4 @@ export let loadData = (req: Request, res: Response) => {
   loadStops.loadStopsFromFile();
   loadStopTimes.loadStopTimesFromFile();
   loadTrips.loadTripsFromFile();
-  res.send("end");
 };

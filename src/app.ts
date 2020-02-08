@@ -3,7 +3,12 @@ import mongoose from "mongoose";
 
 import * as entrypoint from "./controller/entrypoint";
 
-const uri: string = "mongodb://127.0.0.1:27017/mongodb";
+//local
+//const uri: string = "mongodb://127.0.0.1:27017/mongodb";
+
+//docker
+const uri: string = "mongodb://mongo:27017/mongodb";
+
 mongoose.connect(uri, (err: any) => {
   if (err) {
     console.log(err.message);

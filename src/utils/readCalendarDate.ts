@@ -3,7 +3,7 @@ const readCsv = require("gtfs-utils/read-csv");
 import calendarDates from "./../model/calendarDates";
 
 export let loadCalendarFromFile = () => {
-  var a = readCsv("../files/rome_static_gtfs/calendar_dates.txt")
+  var a = readCsv("/usr/src/app/rome_static/calendar_dates.txt")
     .on("error", console.error)
     .on("readable", function() {
       let data;

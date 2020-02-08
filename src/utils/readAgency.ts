@@ -3,7 +3,7 @@ const readCsv = require("gtfs-utils/read-csv");
 import Agency from "./../model/agency";
 
 export let loadAgencyFromFile = () => {
-  var a = readCsv("../files/rome_static_gtfs/agency.txt")
+  var a = readCsv("/usr/src/app/rome_static/agency.txt")
     .on("error", console.error)
     .on("readable", function() {
       let data;
