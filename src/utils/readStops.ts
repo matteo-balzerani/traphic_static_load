@@ -1,11 +1,12 @@
 var fs = require("fs");
 const readCsv = require("gtfs-utils/read-csv");
 import Stop from "./../model/stop";
+import { folder } from "./const";
 
 export let loadStopsFromFile = () => {
-  var a = readCsv("/usr/src/app/rome_static/stops.txt")
+  var a = readCsv(folder.concat("stops.txt"))
     .on("error", console.error)
-    .on("readable", function() {
+    .on("readable", function(this: any) {
       let data;
       while ((data = this.read())) {
         var stop = new Stop(data);

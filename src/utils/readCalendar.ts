@@ -1,11 +1,12 @@
 var fs = require("fs");
 const readCsv = require("gtfs-utils/read-csv");
 import Calendar from "./../model/calendar";
+import { folder } from "./const";
 
 export let loadCalendarFromFile = () => {
-  var a = readCsv("/usr/src/app/rome_static/calendar.txt")
+  var a = readCsv(folder.concat("calendar.txt"))
     .on("error", console.error)
-    .on("readable", function() {
+    .on("readable", function(this: any) {
       let data;
       while ((data = this.read())) {
         var calendar = new Calendar(data);

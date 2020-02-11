@@ -3,11 +3,8 @@ import mongoose from "mongoose";
 
 import * as entrypoint from "./controller/entrypoint";
 
-//local
-//const uri: string = "mongodb://127.0.0.1:27017/mongodb";
-
-//docker
-const uri: string = "mongodb://mongo:27017/mongodb";
+const mongo_service = process.env.MONGODB_URL || "127.0.0.1";
+const uri: string = "mongodb://".concat(mongo_service).concat(":27017/mongodb");
 
 mongoose.connect(uri, (err: any) => {
   if (err) {
